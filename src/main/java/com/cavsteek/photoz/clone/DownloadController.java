@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+//download controller class
 @RestController
 public class DownloadController {
     @Autowired
@@ -19,7 +20,7 @@ public class DownloadController {
         byte[] data = photo.getData();
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.valueOf(photo.getContentType()));
-        ContentDisposition build = ContentDisposition.builder("attachment").filename(photo.getFilename()).build();
+        ContentDisposition build = ContentDisposition.builder("attachment").filename(photo.getFilename()).build()
         headers.setContentDisposition(build);
 
 
